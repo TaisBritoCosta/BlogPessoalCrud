@@ -2,8 +2,11 @@ package com.generation.controller;
 
 import java.util.List;
 
-
 import javax.validation.Valid;
+
+
+import com.generation.model.Tema;
+import com.generation.repository.TemaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +20,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.generation.model.Tema;
-import com.generation.repository.TemaRepository;
 
 
 @RestController
@@ -37,7 +37,7 @@ public class TemaController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Tema> getById(@PathVariable long id) {
+	public ResponseEntity<Tema> getById(@PathVariable Long id) {
 		return temaRepository.findById(id)
 			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.notFound().build());
@@ -65,7 +65,7 @@ public class TemaController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deletePostagem(@PathVariable long id) {
+	public ResponseEntity<?> deletePostagem(@PathVariable Long id) {
 		
 		return temaRepository.findById(id)
 				.map(resposta -> {
@@ -76,3 +76,5 @@ public class TemaController {
 	}
 
 }
+
+

@@ -47,12 +47,14 @@ public class UsuarioController {
 			.orElse(ResponseEntity.notFound().build());
 	}
 	
+
 	@PostMapping("/logar")
 	public ResponseEntity<UsuarioLogin> login(@RequestBody Optional<UsuarioLogin> usuarioLogin) {
 		return usuarioService.autenticarUsuario(usuarioLogin)
 			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
+
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> postUsuario(@Valid @RequestBody Usuario usuario) {
@@ -63,6 +65,7 @@ public class UsuarioController {
 
 	}
 
+
 	@PutMapping("/atualizar")
 	public ResponseEntity<Usuario> putUsuario(@Valid @RequestBody Usuario usuario) {
 		return usuarioService.atualizarUsuario(usuario)
@@ -71,4 +74,3 @@ public class UsuarioController {
 	}
 
 }
-
