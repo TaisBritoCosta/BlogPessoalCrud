@@ -21,11 +21,14 @@ public class SwaggerConfig {
 		return new OpenAPI()
 				.info(new Info().title("Projeto Blog Pessoal").description("Projeto Blog Pessoal - Generation Brasil")
 						.version("v0.0.1")
-						.license(new License().name("Generation Brasil").url("https://brazil.generation.org/"))
-						.contact(new Contact().name("Taís Costa").url("https://github.com/TaisBritoCosta")
+						.license(new License()
+								.name("Generation Brasil")
+								.url("https://brazil.generation.org/"))
+						.contact(new Contact()
+								.name("Taís Costa").url("https://www.linkedin.com/in/ta%C3%ADs-brito-costa-261940222/")
 								.email("taiscosta2016@hotmail.com")))
 				.externalDocs(new ExternalDocumentation().description("Github")
-						.url("https://github.com/conteudoGeneration/"));
+						.url("https://github.com/TaisBritoCosta"));
 	}
 
 	@Bean
