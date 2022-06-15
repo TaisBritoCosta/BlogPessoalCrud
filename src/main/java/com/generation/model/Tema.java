@@ -19,7 +19,7 @@ public class Tema{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@NotBlank(message = "O atributo Descrição é obrigatório e não pode conter espaços em branco")
 	private String descricao;
@@ -33,11 +33,11 @@ public class Tema{
 		this.descricao = descricao;
 		}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
